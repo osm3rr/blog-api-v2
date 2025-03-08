@@ -41,19 +41,27 @@ INSTALLED_APPS = [
     'posts',
     # 3rd party apps
     'corsheaders',
-    'django.contrib.sites', # new
-    'allauth', # new
-    'allauth.account',  # new
-    'allauth.socialaccount',    # new
-    'dj_rest_auth', # new
-    'dj_rest_auth.registration',   # new
-    'rest_framework.authtoken',    # new
+    'django.contrib.sites', 
+    'allauth', 
+    'allauth.account',  
+    'allauth.socialaccount',    
+    'dj_rest_auth', 
+    'dj_rest_auth.registration',   
+    'rest_framework.authtoken',   
+    'drf_spectacular',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Django Project API',
+    'DESCRIPTION': 'API for Django Project',
+    'VERSION': '1.0.0',
 }
 
 MIDDLEWARE = [
